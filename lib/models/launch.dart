@@ -5,7 +5,9 @@ part 'launch.g.dart';
 @JsonSerializable()
 class Launch {
   Links links;
+  @JsonKey(name: 'static_fire_date_utc')
   String? staticFireDateUtc;
+  @JsonKey(name: 'static_fire_date_unix')
   int? staticFireDateUnix;
   bool? tdb;
   bool? net;
@@ -17,12 +19,19 @@ class Launch {
   List<String> capsules;
   List<String> payloads;
   String? launchpad;
+  @JsonKey(name: 'auto_update')
   bool? autoUpdate;
+  @JsonKey(name: 'flight_number')
   int? flightNumber;
   String? name;
+
+  @JsonKey(name: 'date_utc')
   String? dateUtc;
+  @JsonKey(name: 'date_unix')
   int? dateUnix;
+  @JsonKey(name: 'date_local')
   String? dateLocal;
+  @JsonKey(name: 'date_precision')
   String? datePrecision;
   bool? upcoming;
   List<Cores> cores;
@@ -66,6 +75,7 @@ class Links {
   Flickr? flickr;
   String? presskit;
   String? webcast;
+  @JsonKey(name: 'youtube_id')
   String? youtubeId;
   String? article;
   String? wikipedia;

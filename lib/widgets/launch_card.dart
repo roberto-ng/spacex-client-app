@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spacex_client_app/models/launch.dart';
+import 'package:spacex_client_app/routes/launch_details.dart';
 
 class LaunchCard extends StatelessWidget {
   final Launch launch;
@@ -20,7 +21,12 @@ class LaunchCard extends StatelessWidget {
         color: Colors.indigo,
         child: InkWell(
           onTap: (() {
-            print("Hey");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LaunchDetailsPage(launch: launch),
+              ),
+            );
           }),
           child: Container(
             constraints: const BoxConstraints(
